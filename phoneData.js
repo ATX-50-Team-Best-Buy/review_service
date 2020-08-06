@@ -753,7 +753,7 @@ const data = [
     description: 'Get more out of your favorite shows and movies when you watch them on this Samsung 75-inch 8K Ultra HD smart TV. The 8K AI upscaling technology and Quantum Processor 8K remaster content for better audio and image quality, while the 100 percent color volume enhances hues for a rich viewing experience. With a simple-edge screen and flush wall-mount design, this Samsung 75-inch 8K Ultra HD smart TV blends seamlessly with your room.',
     brand: 'Samsung',
     department: 'TV & Home Theater',
-    color: 'Black',
+    color: 'Black', ``
     subDept: 'TVs',
     sku: 6323713,
     price: 2,999.99,
