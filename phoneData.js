@@ -271,7 +271,7 @@ const data = [
     color: 'white',
     subDept: 'Xbox One',
     sku: '6415222',
-    price: '$299.99',
+    price: 299.99,
     avgRating: 4.6,
     colors: ['white', 'black'],
     reviews: [],
@@ -1508,6 +1508,28 @@ const data = [
     recentlyViewed: false
   },
   {
+    uniqueID: 90,
+    name: 'Apple - 21.5" iMac® with Retina 4K display - Intel Core i3 (3.6GHz) - 8GB Memory - 1TB Hard Drive',
+    description: "iMac performance is at an all-time high with a new eighth-generation Intel Core processor, powerful Radeon Pro 500X-series graphics, Thunderbolt 3 (USB-C) connectivity, and stunning Retina 4K display with one billion colors and 500 nits of brightness for vibrant images and razor-sharp text.",
+    brand: 'Apple',
+    department: 'Computers',
+    color: 'Silver',
+    subDept: 'Desktops',
+    sku: 5998901,
+    price: 1299.99,
+    avgRating: 4.6,
+    colors: ['Silver'],
+    reviews: [],
+    questions: {
+      question: 'Why is this computer so expensive?',
+      answer: "Apple's reputation and brand allow it to charge a premium for its high-end products."
+      },
+    images: ['https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5998/5998901_sd.jpg;maxHeight=1000;maxWidth=1000', 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5998/5998901ld.jpg', 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5998/5998901cv12d.jpg'],
+    peopleAlsoBought: [],
+    peopleAlsoViewed: [],
+    recentlyViewed: false
+  },
+  {
     uniqueID: 91,
     name: 'Apple - 27" iMac® with Retina 5k display - Intel Core i5 (3.1GHz) - 8GB Memory - 1TB Fusion Drive',
     description: 'iMac performance is at an all-time high with a new eighth-generation Intel Core processor, powerful Radeon Pro 500X-series graphics, Thunderbolt 3 (USB-C) connectivity, and stunning Retina 5K display with one billion colors and 500 nits of brightness for vibrant images and razor-sharp text.',
@@ -1835,7 +1857,7 @@ const data = [
     images: ['https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398974_sd.jpg', 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398974_rd.jpg', 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398974_bd.jpg'],
     peopleAlsoBought: '',
     peopleAlsoViewed: '',
-    recentlyViewed: ''
+    recentlyViewed: false
   },
   {
     uniqueID: 106,
