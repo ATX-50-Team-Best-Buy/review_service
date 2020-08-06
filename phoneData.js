@@ -1855,8 +1855,8 @@ const data = [
       answer: "An all in one computer is basically a monitor in which you just plug in your mouse and keyboard, all the hardware are inside the monitor's case."
     },
     images: ['https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398974_sd.jpg', 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398974_rd.jpg', 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398974_bd.jpg'],
-    peopleAlsoBought: '',
-    peopleAlsoViewed: '',
+    peopleAlsoBought: [],
+    peopleAlsoViewed: [],
     recentlyViewed: false
   },
   {

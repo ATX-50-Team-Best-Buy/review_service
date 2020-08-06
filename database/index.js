@@ -1,0 +1,87 @@
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/bestbuy');
+const mock = require('../phoneData.js');
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind('console', 'connection error:'));
+db.once('open', () => {
+console.log('hello');
+
+  let productSchema = mongoose.Schema({
+    uniqueID: Number,
+    name: String,
+    description: String,
+    brand: String,
+    department: String,
+    color: String,
+    subDept: String,
+    sku: Number,
+    price: Number,
+    avgRating: Number,
+    colors: [],
+    reviews: [],
+    questions: {
+      question: String,
+      answer: String
+    },
+    images: [],
+    peopleAlsoBought: [],
+    peopleAlsoViewed: [],
+    recentlyViewed: Boolean
+})
+
+  let Product = mongoose.model('Product', productSchema);
+
+
+
+  let reviewSchema = mongoose.Schema({
+    uniqueID: Number,
+    reviewText: String,
+    rating: Number,
+    recommended: Boolean,
+    helpful: Number,
+    unhelpful: Number,
+    quality: Number,
+    value: Number,
+    easeOfUse: Number,
+    createdAt: Date
+  })
+
+  let Review = mongoose.model('Review', reviewSchema);
+
+  let saveToDB = (model) => {
+    var product = new Product({
+      uniqueID: model.uniqueID,
+      name: model.name,
+      description: model.description,
+      brand: model.brand,
+      department: model.department,
+      color: model.color,
+      subDept: model.subDept,
+      sku: model.sku,
+      price: model.price,
+      avgRating: model.avgRating,
+      colors: [],
+      reviews: [],
+      questions: {
+        question: model.questions.question,
+        answer: model.questions.answer
+      },
+      images: [],
+      peopleAlsoBought: [],
+      peopleAlsoViewed: [],
+      recentlyViewed: model.recentlyViewed
+    });
+    product.save();
+    console.log('CREATED: ', model.uniqueID)
+  }
+
+  mock.data.map(item => {
+    saveToDB(item);
+  })
+
+  // module.exports.seed = seed;
+  module.exports.productSchema = productSchema;
+  module.exports.Product = Product;
+})
