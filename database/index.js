@@ -49,6 +49,7 @@ console.log('hello');
   })
 
   let Review = mongoose.model('Review', reviewSchema);
+
   let saveReviewToDB = (review) => {
     var product = new Review({
       uniqueID: review.uniqueID,
@@ -93,6 +94,9 @@ console.log('hello');
   //   console.log('CREATED: ', model.uniqueID)
   // }
 
+  let getAllReviews = () =>{
+    return Review.find()
+  }
 
   // mock.data.map(item => {
   //   saveReviewToDB(item);
@@ -101,4 +105,5 @@ console.log('hello');
   // module.exports.seed = seed;
   module.exports.productSchema = productSchema;
   module.exports.Product = Product;
+  module.exports.getAllReviews = getAllReviews;
 })

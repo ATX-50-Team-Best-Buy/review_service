@@ -31,6 +31,7 @@
 .reviewAccordion {
   font-size: 20px;
   padding: 5px;
+  margin-bottom: 2px;
   border-top: 1px solid rgb(197, 203, 213);
   border-bottom: 1px solid rgb(197, 203, 213);
   width:100%;
