@@ -77,9 +77,9 @@ console.log('hello');
     console.log('CREATED: ', model.uniqueID)
   }
 
-  mock.data.map(item => {
-    saveToDB(item);
-  })
+  // mock.data.map(item => {
+  //   saveToDB(item);
+  // })
 
   // module.exports.seed = seed;
   module.exports.productSchema = productSchema;
