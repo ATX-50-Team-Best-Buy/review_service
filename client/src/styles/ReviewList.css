@@ -1,0 +1,26 @@
+.reviewStats {
+  height: 200px;
+  width: 100%;
+}
+
+.rating {
+  display:inline-block;
+  padding: 5px;
+  width: 23%;
+}
+
+.starRatings {
+  width:80%;
+}
+
+.avgRatingScore{
+  font-size: 20px;
+}
+.widget-svg{
+  height: 15px;
+  width: 15px;
+}
+
+.percentBar {
+  width: 70%;
+}
