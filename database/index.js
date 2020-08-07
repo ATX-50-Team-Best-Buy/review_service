@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/bestbuy');
-const mock = require('../phoneData.js');
+const mock = require('../reviewData.js');
 
 const db = mongoose.connection;
 
@@ -49,36 +49,53 @@ console.log('hello');
   })
 
   let Review = mongoose.model('Review', reviewSchema);
-
-  let saveToDB = (model) => {
-    var product = new Product({
-      uniqueID: model.uniqueID,
-      name: model.name,
-      description: model.description,
-      brand: model.brand,
-      department: model.department,
-      color: model.color,
-      subDept: model.subDept,
-      sku: model.sku,
-      price: model.price,
-      avgRating: model.avgRating,
-      colors: [],
-      reviews: [],
-      questions: {
-        question: model.questions.question,
-        answer: model.questions.answer
-      },
-      images: [],
-      peopleAlsoBought: [],
-      peopleAlsoViewed: [],
-      recentlyViewed: model.recentlyViewed
+  let saveReviewToDB = (review) => {
+    var product = new Review({
+      uniqueID: review.uniqueID,
+      reviewText: review.reviewText,
+      rating: review.rating,
+      recommended: review.Recommended,
+      helpful: review.helpful,
+      unhelpful: review.unhelpful,
+      quality: review.quality,
+      value: review.value,
+      easeOfUse: review.easeOfUse,
+      createdAt: review.createdAt
     });
     product.save();
-    console.log('CREATED: ', model.uniqueID)
+    console.log('CREATED: ', review.uniqueID)
   }
 
+  // let saveToDB = (model) => {
+  //   var product = new Product({
+  //     uniqueID: model.uniqueID,
+  //     name: model.name,
+  //     description: model.description,
+  //     brand: model.brand,
+  //     department: model.department,
+  //     color: model.color,
+  //     subDept: model.subDept,
+  //     sku: model.sku,
+  //     price: model.price,
+  //     avgRating: model.avgRating,
+  //     colors: [],
+  //     reviews: [],
+  //     questions: {
+  //       question: model.questions.question,
+  //       answer: model.questions.answer
+  //     },
+  //     images: [],
+  //     peopleAlsoBought: [],
+  //     peopleAlsoViewed: [],
+  //     recentlyViewed: model.recentlyViewed
+  //   });
+  //   product.save();
+  //   console.log('CREATED: ', model.uniqueID)
+  // }
+
+
   // mock.data.map(item => {
-  //   saveToDB(item);
+  //   saveReviewToDB(item);
   // })
 
   // module.exports.seed = seed;
