@@ -98,6 +98,21 @@ console.log('hello');
     return Review.find()
   }
 
+  let writeReview = (review => {
+    let newReview = new Review({
+      uniqueID: review.uniqueID,
+      reviewText: review.reviewText,
+      rating: review.rating,
+      recommended: review.Recommended,
+      helpful: review.helpful,
+      unhelpful: review.unhelpful,
+      quality: review.quality,
+      value: review.value,
+      easeOfUse: review.easeOfUse,
+      createdAt: review.createdAt
+    })
+    return newReview.save();
+  })
   // mock.data.map(item => {
   //   saveReviewToDB(item);
   // })
@@ -106,4 +121,5 @@ console.log('hello');
   module.exports.productSchema = productSchema;
   module.exports.Product = Product;
   module.exports.getAllReviews = getAllReviews;
+  module.exports.writeReview = writeReview;
 })

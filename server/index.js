@@ -20,5 +20,15 @@ app.get('/reviews', (req, res) => {
   })
 })
 
+app.post('/reviews', (req, res) => {
+  db.writeReview()
+  .then(confirmation => {
+    res.status(200).send(confirmation);
+  })
+  .catch(error => {
+    res.status(500).send("Error on server writing review: ", error);
+  })
+})
+
 app.get('/heyyo', (req, res) => res.send('ho!'))
 app.listen(port, () => console.log(`Server is posted up at http://localhost:${port} `))

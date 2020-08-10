@@ -35,6 +35,17 @@ class ReviewList extends React.Component {
       console.log(error)
     })
   }
+
+  writeReview() {
+    axios.post('http://localhost:1963/reviews')
+    .then(confirmation => {
+      console.log('Review successfully posted: ', confirmation);
+    })
+    .catch(error => {
+      console.log('Error posting review: ', error);
+    })
+  }
+
   render() {
 
     return (
@@ -103,12 +114,15 @@ class ReviewList extends React.Component {
           </div>
         </div>
       </div>
-      <div>
+      <div style={{borderBottom: '1px solid rgb(197, 203, 213)'}}>
         <FilterReview />
       </div>
       {this.state.reviews.map( (review, idx) =>
       <Review review={review}  key={idx} />
       )}
+      <div>
+        <button>Write Review</button>
+      </div>
     </div>
     )
   }
