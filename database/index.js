@@ -37,15 +37,18 @@ console.log('hello');
 
   let reviewSchema = mongoose.Schema({
     uniqueID: Number,
+    reviewHeading: String,
     reviewText: String,
-    rating: Number,
-    recommended: Boolean,
-    helpful: Number,
-    unhelpful: Number,
-    quality: Number,
-    value: Number,
-    easeOfUse: Number,
-    createdAt: Date
+    reviewUsername: String,
+    reviewRating: Number,
+    reviewRecommended: Boolean,
+    reviewHelpful: Number,
+    reviewUnhelpful: Number,
+    reviewQuality: Number,
+    reviewValue: Number,
+    reviewEaseOfUse: Number,
+    reviewImages: Array,
+    reviewCreatedAt: Date
   })
 
   let Review = mongoose.model('Review', reviewSchema);
@@ -53,15 +56,18 @@ console.log('hello');
   let saveReviewToDB = (review) => {
     var product = new Review({
       uniqueID: review.uniqueID,
+      reviewHeading: review.reviewHeading,
       reviewText: review.reviewText,
-      rating: review.rating,
-      recommended: review.Recommended,
-      helpful: review.helpful,
-      unhelpful: review.unhelpful,
-      quality: review.quality,
-      value: review.value,
-      easeOfUse: review.easeOfUse,
-      createdAt: review.createdAt
+      reviewUsername: review.reviewUsername,
+      reviewRating: review.rating,
+      reviewRecommended: review.Recommended,
+      reviewHelpful: review.helpful,
+      reviewUnhelpful: review.unhelpful,
+      reviewQuality: review.quality,
+      reviewValue: review.value,
+      reviewEaseOfUse: review.easeOfUse,
+      reviewImages: review.reviewImages,
+      reviewCreatedAt: review.createdAt
     });
     product.save();
     console.log('CREATED: ', review.uniqueID)

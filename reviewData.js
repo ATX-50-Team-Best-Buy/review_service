@@ -1,7 +1,9 @@
 const data = [
   {
     uniqueID: 1,
+    reviewHeading: 'review heading #1',
     reviewText: "this product is awesome",
+    reviewUsername: 'TedCruzForHumanPresident',
     rating: 5,
     recommended: true,
     helpful: 10,
@@ -9,11 +11,14 @@ const data = [
     quality: 5,
     value: 5,
     easeOfUse: 5,
+    reviewImages: [],
     createdAt: 12/12/1923
   },
   {
     uniqueID: 2,
+    reviewHeading: 'BAD BAD NOT GOOD',
     reviewText: "This product is the worst",
+    reviewUsername: 'MitthewRomney',
     rating: 1,
     recommended: false,
     helpful: 1,
@@ -21,11 +26,14 @@ const data = [
     quality: 2,
     value: 3,
     easeOfUse: 1,
+    reviewImages: [],
     createdAt: 12/19/1854
   },
   {
     uniqueID: 3,
+    reviewHeading: 'AAAHH',
     reviewText: "I don't like this very much",
+    reviewUsername: 'BananaPhone2',
     rating: 2,
     recommended: false,
     helpful: 10,
@@ -33,11 +41,14 @@ const data = [
     quality: 2,
     value: 4,
     easeOfUse: 3,
+    reviewImages: [],
     createdAt: 08/07/2020
   },
   {
     uniqueID: 4,
+    reviewHeading: 'Pon de replay',
     reviewText: "This thing changed my life!",
+    reviewUsename: 'Riri4me',
     rating: 5,
     recommended: true,
     helpful: 10,
@@ -45,11 +56,14 @@ const data = [
     quality: 5,
     value: 5,
     easeOfUse: 5,
+    reviewImages: [],
     createdAt: 10/10/2010
   },
   {
     uniqueID: 5,
+    reviewHeading: 'Off with the plank',
     reviewText: "Yarg, a pirate's life for me",
+    reviewUsername: 'PirateSteve',
     rating: 9,
     recommended: true,
     helpful: 0,
@@ -57,11 +71,14 @@ const data = [
     quality: 4,
     value: 5,
     easeOfUse: 3,
+    reviewImages: ['https://bloximages.chicago2.vip.townnews.com/napavalleyregister.com/content/tncms/assets/v3/editorial/d/b8/db84f292-5e7f-11e5-98bb-fbdc466793df/55fcdb5212153.image.jpg?crop=600%2C338%2C0%2C21&resize=600%2C338&order=crop%2Cresize', 'https://lh3.googleusercontent.com/proxy/CVoOExjNPfC8yxIaSFd_MwcQayNpGdoBgcEypNOovknrwRozy2SsIPThNdzsCnnrlpgsyLyBaSLjcdpvRKWHL7IEPaAwbIeXUJtlpeJZd2vyGraNG5KNI19QWyxJU6LINFkMZWS-08RYgp6hZXoPODfrmUUSjEr9MkW1ASi0HjidZCUH-lQRMI5752RfoXgDdPSnMjjwagCNnn-ozZDX4dzT-SoG'],
     createdAt: 06/10/1976
   },
   {
     uniqueID: 6,
+    reviewHeading: 'He was a big ol wimp!',
     reviewText: "I beat someone up for this product on Black Friday. Totally worth it!",
+    reviewUsername: 'TykeMyson',
     rating: 10,
     recommended: true,
     helpful: 4,
@@ -69,11 +86,14 @@ const data = [
     quality: 5,
     value: 4,
     easeOfUse: 3,
+    reviewImages: [],
     createdAt: 11/29/2011
   },
   {
     uniqueID: 7,
+    reviewHeading: 'Ouch!',
     reviewText: "I got beat up while trying to get this product on Black Friday. I'll see you in court Best Buy",
+    reviewUsername: 'EvandersEar',
     rating: 0,
     recommended: false,
     helpful: 0,
@@ -81,11 +101,14 @@ const data = [
     quality: 1,
     value: 1,
     easeOfUse: 1,
+    reviewImages: [],
     createdAt: 11/29/2011
   },
   {
     uniqueID: 8,
+    reviewHeading: 'CheapCheapCheap!',
     reviewText: "I got this new iPhone 11 for $2000 for my 2 year old. She is going to love it!",
+    reviewUsername: 'Tim',
     rating: 10,
     recommended: true,
     helpful: 100,
@@ -93,11 +116,14 @@ const data = [
     quality: 3,
     value: 4,
     easeOfUse: 5,
+    reviewImages: [],
     createdAt: 11/20/2000
   },
   {
     uniqueID: 9,
+    reviewHeading: 'heh',
     reviewText: "More like worst buy, if you ask me",
+    reviewUsername: 'abc123',
     rating: 0,
     recommended: false,
     helpful: 1,
@@ -105,11 +131,14 @@ const data = [
     quality: 1,
     value: 1,
     easeOfUse: 1,
+    reviewImages: [],
     createdAt: 11/12/2006
   },
   {
     uniqueID: 10,
+    reviewHeading: '1 <3 Mark',
     reviewText: "Shout out to your employee Mark - the Best Guy at Best Buy",
+    reviewUsername: 'MarkFrmBestBuy',
     rating: 6,
     recommended: true,
     helpful: 1,
@@ -117,6 +146,7 @@ const data = [
     quality: 4,
     value: 3,
     easeOfUse: 5,
+    reviewImages: [],
     createdAt: 09/04/2018
   }
 ]
