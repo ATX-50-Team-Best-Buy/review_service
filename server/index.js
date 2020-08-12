@@ -9,6 +9,7 @@ const cors = require('cors');
 // app.use(express.static(path.join(__dirname, '../build')));
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.json());
 
 app.get('/reviews', (req, res) => {
   db.getAllReviews()
@@ -21,7 +22,8 @@ app.get('/reviews', (req, res) => {
 })
 
 app.post('/reviews', (req, res) => {
-  db.writeReview()
+  // console.log(req.body)
+  db.saveReviewToDB(req.body)
   .then(confirmation => {
     res.status(200).send(confirmation);
   })
@@ -30,5 +32,5 @@ app.post('/reviews', (req, res) => {
   })
 })
 
-app.get('/heyyo', (req, res) => res.send('ho!'))
+
 app.listen(port, () => console.log(`Server is posted up at http://localhost:${port} `))

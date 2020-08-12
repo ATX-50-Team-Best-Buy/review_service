@@ -4,17 +4,34 @@ import StarRatings from 'react-star-ratings';
 import RatingCountByStar from './RatingCountByStar';
 import FilterReview from './FilterReview';
 import Review from './Review';
-import axios from 'axios'
+import axios from 'axios';
+import ReviewForm from './ReviewForm';
 
 class ReviewList extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      reviews: []
+      reviews: [],
+      productID: 1,
+      reviewHeading: '',
+      reviewText: '',
+      reviewUsername: '',
+      reviewRating: 0,
+      reviewRecommended: false,
+      reviewQuality: 0,
+      reviewValue: 0,
+      reviewEaseOfUse: 0,
+      reviewImages: []
     };
 
     this.getAllReviews = this.getAllReviews.bind(this);
+    this.addReviewPart = this.addReviewPart.bind(this);
+    this.addReviewQuality = this.addReviewQuality.bind(this);
+    this.addReviewValue = this.addReviewValue.bind(this);
+    this.addReviewEaseOfUse = this.addReviewEaseOfUse.bind(this);
+    this.addReviewRating = this.addReviewRating.bind(this);
+    this.writeReview = this.writeReview.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +40,7 @@ class ReviewList extends React.Component {
   }
 
   getAllReviews() {
-    axios.get('http://localhost:1963/reviews')
+    axios.get('/reviews')
     .then(reviews => {
       this.setState({
         reviews: reviews.data
@@ -36,8 +53,21 @@ class ReviewList extends React.Component {
     })
   }
 
-  writeReview() {
-    axios.post('http://localhost:1963/reviews')
+  writeReview(event) {
+    event.preventDefault();
+    console.log(111111)
+    axios.post('/reviews' , {
+      productID: this.state.productID,
+      reviewHeading: this.state.reviewHeading,
+      reviewText: this.state.reviewText,
+      reviewRating: this.state.reviewRating,
+      reviewUsername: this.state.reviewUsername,
+      reviewRecommended: this.state.reviewRecommended,
+      reivewQuality: this.state.reviewQuality,
+      reviewValue: this.state.reviewValue,
+      reviewEaseOfUse: this.state.reviewEaseOfUse,
+      reviewImages: this.state.reviewImages
+    })
     .then(confirmation => {
       console.log('Review successfully posted: ', confirmation);
     })
@@ -45,6 +75,37 @@ class ReviewList extends React.Component {
       console.log('Error posting review: ', error);
     })
   }
+
+  addReviewPart(event) {
+    let reviewPart = event.target.className
+      this.setState({
+        [reviewPart]: event.target.value
+      });
+  }
+
+  addReviewQuality(rating) {
+    this.setState({
+      reviewQuality: rating
+    })
+  }
+
+  addReviewValue(rating) {
+    this.setState({
+      reviewValue: rating
+    })
+  }
+
+  addReviewEaseOfUse(rating) {
+    this.setState({
+      reviewEaseOfUse: rating
+    })
+  }
+  addReviewRating(rating) {
+    this.setState({
+      reviewRating: rating
+    })
+  }
+
 
   render() {
 
@@ -121,8 +182,17 @@ class ReviewList extends React.Component {
       <Review review={review}  key={idx} />
       )}
       <div>
-        <button>Write Review</button>
+        <button onClick={() => console.log(this.state)}>Write Review</button>
       </div>
+      <ReviewForm
+        // review={this.state.addReview}
+        addReviewPart={this.addReviewPart}
+        reviewQuality = {this.addReviewQuality}
+        reviewValue = {this.addReviewValue}
+        reviewEaseOfUse = {this.addReviewEaseOfUse}
+        reviewRating = {this.addReviewRating}
+        writeReview = {this.writeReview}
+      />
     </div>
     )
   }

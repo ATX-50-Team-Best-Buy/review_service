@@ -1,0 +1,10 @@
+.emptyRating {
+  height: 16px;
+  width: 33px;
+  border: 1px solid black;
+}
+
+.submit {
+  color: #fff!important;
+  background-color: #0046be;
+}

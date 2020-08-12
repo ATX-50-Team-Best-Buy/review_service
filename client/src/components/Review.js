@@ -8,7 +8,7 @@ const Review = ( {review} ) => {
     <div className='reviewContainer'>
       <div className='reviewHeader'>
         <div className="username">
-          <strong>Username</strong>
+          <strong>{review.reviewUsername}</strong>
         </div>
         <br></br>
         <div className="reviewHeaderText">
@@ -27,7 +27,7 @@ const Review = ( {review} ) => {
       <div className='reviewBody'>
         <StarRatings
           className='reviewRating'
-          rating={review.rating}
+          rating={review.reviewRating}
           starRatedColor="yellow"
           // changeRating={this.changeRating}
           numberOfStars={5}
@@ -36,7 +36,7 @@ const Review = ( {review} ) => {
           starSpacing="3px"
         />
         <div className="reviewBody header">
-         <strong>Review Body Header</strong>
+         <strong>{review.reviewHeading}</strong>
         </div>
         <div>
         <br></br>
@@ -46,11 +46,11 @@ const Review = ( {review} ) => {
       {review.reviewText}
       <br></br>
       <div className='reviewBody footer'>
-        <button style={{border: '1px solid #c5cbd5', padding: '0 7px'}}className="reviewButtons">helpful ({review.helpful})</button>
-        <button className="reviewButtons">unhelpful ({review.unhelpful})</button>
-        <button style={{borderLeft: '1px solid #040c13'}} className="reviewButtons">report</button>
-        <button style={{borderLeft: '1px solid #040c13'}} className="reviewButtons">comment</button>
-        <button style={{borderLeft: '1px solid #040c13'}}className="reviewButtons">show comment</button>
+        <button style={{border: '1px solid #c5cbd5', padding: '0 7px'}}className="reviewButtons">helpful ({review.reviewHelpful})</button>
+        <button className="reviewButtons">unhelpful ({review.reviewUnhelpful})</button>
+        <button className="reviewButtons">report</button>
+        <button className="reviewButtons">comment</button>
+        <button className="reviewButtons">show comment</button>
       </div>
       </div>
     </div>
