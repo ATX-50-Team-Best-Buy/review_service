@@ -229,8 +229,9 @@ class ReviewList extends React.Component {
         {this.state.reviews.map( (review, idx) =>
         <Review review={review}  key={idx} />
         )}
-        <div>
-          <button onClick={this.toggleReview}>Write Review</button>
+        <div style={{textAlign: 'center'}}>
+          <button className='showReviewButtons show' >Show More</button>
+          <button className ='showReviewButtons' onClick={this.toggleReview}>Write a Review</button>
         </div>
         <ReviewForm
           // review={this.state.addReview}

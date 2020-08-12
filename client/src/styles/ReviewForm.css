@@ -4,14 +4,22 @@
   border: 1px solid black;
 }
 
-.submit {
+.reviewSubmit {
   color: #fff!important;
   background-color: #0046be;
+  width: 71%;
+  height: 40px;
+  margin: 15px 0;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 15px;
+  border: 0
 }
 
 .reviewForm{
   width: 50%;
   display: inline-block;
+
 }
 
 .bufferReview {
@@ -40,6 +48,12 @@
 }
 .reviewHeading {
   width: 70%;
+  height: 25px;
+}
+
+.reviewUsername {
+  width: 70%;
+  height:25px;
 }
 
 .rw-hidden {

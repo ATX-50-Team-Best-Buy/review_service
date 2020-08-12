@@ -55,3 +55,31 @@
   margin: 5px;
 }
 
+.showReviewButtons {
+ font-size: 15px;
+ font:arial;
+ height: 35px;
+ width: 250px;
+ cursor: pointer;
+ text-align: center;
+ vertical-align: middle;
+ margin: 20px;
+ padding: 0 28px;
+ color: #fff;
+ background-color: #0046be;
+ font-weight: bold;
+ border-radius: 4px;
+ border: 0;
+}
+
+.show {
+  background-color: #fff;
+  color: #0046be;
+  border: 1px solid #0046be;
+}
+
+.show:hover {
+  color: #fff;
+  background-color: #0046be;
+}
+
