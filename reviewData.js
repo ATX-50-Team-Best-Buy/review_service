@@ -1,6 +1,6 @@
 const data = [
   {
-    uniqueID: 1,
+    productID: 1,
     reviewHeading: 'review heading #1',
     reviewText: "this product is awesome",
     reviewUsername: 'TedCruzForHumanPresident',
@@ -15,7 +15,7 @@ const data = [
     createdAt: 12/12/1923
   },
   {
-    uniqueID: 2,
+    productID: 1,
     reviewHeading: 'BAD BAD NOT GOOD',
     reviewText: "This product is the worst",
     reviewUsername: 'MitthewRomney',
@@ -30,7 +30,7 @@ const data = [
     createdAt: 12/19/1854
   },
   {
-    uniqueID: 3,
+    productID: 1,
     reviewHeading: 'AAAHH',
     reviewText: "I don't like this very much",
     reviewUsername: 'BananaPhone2',
@@ -45,7 +45,7 @@ const data = [
     createdAt: 08/07/2020
   },
   {
-    uniqueID: 4,
+    productID: 4,
     reviewHeading: 'Pon de replay',
     reviewText: "This thing changed my life!",
     reviewUsename: 'Riri4me',
@@ -60,7 +60,7 @@ const data = [
     createdAt: 10/10/2010
   },
   {
-    uniqueID: 5,
+    productID: 4,
     reviewHeading: 'Off with the plank',
     reviewText: "Yarg, a pirate's life for me",
     reviewUsername: 'PirateSteve',
@@ -75,7 +75,7 @@ const data = [
     createdAt: 06/10/1976
   },
   {
-    uniqueID: 6,
+    productID: 6,
     reviewHeading: 'He was a big ol wimp!',
     reviewText: "I beat someone up for this product on Black Friday. Totally worth it!",
     reviewUsername: 'TykeMyson',
@@ -90,7 +90,7 @@ const data = [
     createdAt: 11/29/2011
   },
   {
-    uniqueID: 7,
+    productID: 6,
     reviewHeading: 'Ouch!',
     reviewText: "I got beat up while trying to get this product on Black Friday. I'll see you in court Best Buy",
     reviewUsername: 'EvandersEar',
@@ -105,7 +105,7 @@ const data = [
     createdAt: 11/29/2011
   },
   {
-    uniqueID: 8,
+    productID: 8,
     reviewHeading: 'CheapCheapCheap!',
     reviewText: "I got this new iPhone 11 for $2000 for my 2 year old. She is going to love it!",
     reviewUsername: 'Tim',
@@ -120,7 +120,7 @@ const data = [
     createdAt: 11/20/2000
   },
   {
-    uniqueID: 9,
+    productID: 9,
     reviewHeading: 'heh',
     reviewText: "More like worst buy, if you ask me",
     reviewUsername: 'abc123',
@@ -135,7 +135,7 @@ const data = [
     createdAt: 11/12/2006
   },
   {
-    uniqueID: 10,
+    productID: 10,
     reviewHeading: '1 <3 Mark',
     reviewText: "Shout out to your employee Mark - the Best Guy at Best Buy",
     reviewUsername: 'MarkFrmBestBuy',
