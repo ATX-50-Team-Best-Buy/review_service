@@ -36,6 +36,7 @@ class ReviewList extends React.Component {
     this.addReviewRating = this.addReviewRating.bind(this);
     this.writeReview = this.writeReview.bind(this);
     this.changeProduct = this.changeProduct.bind(this);
+    this.toggleReview = this.toggleReview.bind(this);
   }
 
   componentDidMount() {
@@ -167,6 +168,15 @@ class ReviewList extends React.Component {
     })
   }
 
+  toggleReview(event) {
+    event.preventDefault();
+    let reviewDiv = document.getElementById('writeReviewForm')
+    if (reviewDiv.className === 'rw-hidden' || !reviewDiv.className ) {
+      reviewDiv.className = 'rw-visible'
+    } else {
+      reviewDiv.className = 'rw-hidden'
+    }
+  }
   render() {
 
     return (
@@ -220,7 +230,7 @@ class ReviewList extends React.Component {
         <Review review={review}  key={idx} />
         )}
         <div>
-          <button onClick={() => console.log(this.state)}>Write Review</button>
+          <button onClick={this.toggleReview}>Write Review</button>
         </div>
         <ReviewForm
           // review={this.state.addReview}
