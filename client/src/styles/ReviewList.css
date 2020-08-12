@@ -13,8 +13,24 @@
   width: 23%;
 }
 
+.ratingSummary{
+  width: 50%;
+  display: inline-block;
+}
+
+.averageRatings {
+  width:40%;
+  display:inline-block;
+}
+
+.countByStars {
+  width: 50%;
+  display: inline-block;
+}
+
 .starRatings {
   width:80%;
+  display: inline-block;
 }
 
 .avgRatingScore{

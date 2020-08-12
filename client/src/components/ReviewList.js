@@ -140,7 +140,7 @@ class ReviewList extends React.Component {
       <div>
         <input onChange={this.changeProduct} type='text'></input>
         <div className='reviewStats'>
-          <div className='rating summary'>
+          {/* <div className='rating summary'>
             Customer Rating
             <div className='avgRatingScore'>
               4.7
@@ -161,8 +161,8 @@ class ReviewList extends React.Component {
               (50 ratings)
             </div>
             92% would recommend to a friend.
-          </div>
-          <div className = 'rating stars'>
+          </div> */}
+          <div className = 'ratingSummary'>
             <RatingCountByStar />
           </div>
           <div className ='rating pros'>
