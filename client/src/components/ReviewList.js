@@ -34,7 +34,7 @@ class ReviewList extends React.Component {
 
 
     this.getReviewsByProductID = this.getReviewsByProductID.bind(this);
-    this.getAllReviews = this.getAllReviews.bind(this);
+    // this.getAllReviews = this.getAllReviews.bind(this);
     this.addReviewPart = this.addReviewPart.bind(this);
     this.addReviewQuality = this.addReviewQuality.bind(this);
     this.addReviewValue = this.addReviewValue.bind(this);
