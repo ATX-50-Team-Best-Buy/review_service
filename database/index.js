@@ -61,8 +61,8 @@ console.log('hello');
       reviewUsername: review.reviewUsername,
       reviewRating: review.reviewRating,
       reviewRecommended: review.reviewRecommended,
-      reviewHelpful: 0,
-      reviewUnhelpful: 0,
+      reviewHelpful: review.reviewHelpful,
+      reviewUnhelpful: review.reviewUnhelpful,
       reviewQuality: review.reviewQuality,
       reviewValue: review.reviewValue,
       reviewEaseOfUse: review.reviewEaseOfUse,
@@ -104,6 +104,10 @@ console.log('hello');
     return Review.find()
   }
 
+  let getReviewsByProductID = (query) =>{
+    return Review.find(query)
+  }
+
   // let writeReview = (review => {
   //   let newReview = new Review({
   //     productID: review.productID,
@@ -128,4 +132,5 @@ console.log('hello');
   module.exports.Product = Product;
   module.exports.getAllReviews = getAllReviews;
   module.exports.saveReviewToDB = saveReviewToDB;
+  module.exports.getReviewsByProductID = getReviewsByProductID;
 })

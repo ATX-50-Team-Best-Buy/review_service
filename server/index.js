@@ -12,7 +12,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 
 app.get('/reviews', (req, res) => {
-  db.getAllReviews()
+  req.query.productID = Number.parseInt(req.query.productID);
+  // console.log("REQUEST IN SERVER: ", req.query);
+  // db.getAllReviews()
+  db.getReviewsByProductID(req.query)
   .then(reviews => {
     res.status(200).send(reviews);
   })
