@@ -22,7 +22,9 @@ class ReviewList extends React.Component {
       reviewQuality: 0,
       reviewValue: 0,
       reviewEaseOfUse: 0,
-      reviewImages: []
+      reviewImages: [],
+      reviewAvg: 0,
+      reviewCounts: {}
     };
 
     this.getReviewsByProductID = this.getReviewsByProductID.bind(this);
@@ -42,7 +44,6 @@ class ReviewList extends React.Component {
   }
 
   getReviewsByProductID(state){
-    console.log(111111)
     axios.get('./reviews', {
       params: {
         productID: state
@@ -52,6 +53,38 @@ class ReviewList extends React.Component {
       this.setState({
         reviews: reviews.data
       });
+      return reviews;
+    })
+    .then(() => {
+      var sum = 0
+      var counts = {
+        5: 0,
+        4: 0,
+        3: 0,
+        2: 0,
+        1: 0
+      }
+      this.state.reviews.forEach(review => {
+        sum += review.reviewRating
+        counts[review.reviewRating]++
+      });
+
+      for (var key in counts) {
+        counts[key] = (counts[key] / this.state.reviews.length) * 100;
+      }
+
+      if (sum !== 0) {
+        this.setState({
+          reviewAvg: sum / this.state.reviews.length,
+          reviewCounts: counts
+        })
+      } else {
+        this.setState({
+          reviewAvg: 0,
+          reviewCounts: counts
+        });
+      }
+      console.log(this.state)
     })
     .catch(error => {
       console.log('Error retrieving reviews: ', error);
@@ -129,10 +162,10 @@ class ReviewList extends React.Component {
     this.setState({
       productID: newProductID
     }, () => {
-      this.getReviewsByProductID(this.state.productID)
+      this.getReviewsByProductID(this.state.productID);
+      // this.getAverageRating();
     })
   }
-
 
   render() {
 
@@ -140,30 +173,11 @@ class ReviewList extends React.Component {
       <div>
         <input onChange={this.changeProduct} type='text'></input>
         <div className='reviewStats'>
-          {/* <div className='rating summary'>
-            Customer Rating
-            <div className='avgRatingScore'>
-              4.7
-            </div>
-            <div className='starRatings'>
-              <StarRatings
-                rating={4}
-                starRatedColor="yellow"
-                // changeRating={this.changeRating}
-                numberOfStars={5}
-                name='rating'
-                starDimension="20px"
-                starSpacing="3px"
-                ////////this is the exact SVG icon that bestBuy uses, but having trouble with the sizing of it////////
-                // svgIconPath="M10.5 5.3L8.4.5 6.3 5.3c-.1.3-.4.4-.6.4H.5l4 4c.1.2.2.5.1.7l-1 5.1L8 13c.2-.2.4-.2.6 0l4.6 2.6-1.2-5.1c0-.2 0-.5.2-.6l4-4H11a.6.6 0 01-.6-.5h0z"
-                />
-              <br></br>
-              (50 ratings)
-            </div>
-            92% would recommend to a friend.
-          </div> */}
           <div className = 'ratingSummary'>
-            <RatingCountByStar />
+            <RatingCountByStar
+            reviewAvg = {this.state.reviewAvg}
+            reviewCounts = {this.state.reviewCounts}
+            />
           </div>
           <div className ='rating pros'>
             <div className="ProsAndCons">
@@ -189,13 +203,10 @@ class ReviewList extends React.Component {
               <StarRatings
                 rating={4}
                 starRatedColor="yellow"
-                // changeRating={this.changeRating}
                 numberOfStars={5}
                 name='rating'
                 starDimension="20px"
                 starSpacing="3px"
-                ////////this is the exact SVG icon that bestBuy uses, but having trouble with the sizing of it////////
-                // svgIconPath="M10.5 5.3L8.4.5 6.3 5.3c-.1.3-.4.4-.6.4H.5l4 4c.1.2.2.5.1.7l-1 5.1L8 13c.2-.2.4-.2.6 0l4.6 2.6-1.2-5.1c0-.2 0-.5.2-.6l4-4H11a.6.6 0 01-.6-.5h0z"
                 />
               <br></br>
               (50 ratings)

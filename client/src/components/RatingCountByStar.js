@@ -3,17 +3,18 @@ import {Line} from 'rc-progress';
 import '../styles/ReviewList.css'
 import StarRatings from 'react-star-ratings';
 
-const RatingCountByStar = () => {
+const RatingCountByStar = ({reviewAvg, reviewCounts}) => {
+  console.log(reviewAvg)
   return (
     <div>
     <div className='averageRatings'>
       Customer Rating
       <div className='avgRatingScore'>
-        4.7
+        {reviewAvg}
       </div>
       <div className='starRatings'>
         <StarRatings
-          rating={4}
+          rating={reviewAvg}
           starRatedColor="yellow"
           // changeRating={this.changeRating}
           numberOfStars={5}
@@ -33,27 +34,27 @@ const RatingCountByStar = () => {
         <div>
           5 Stars
           <input type="checkbox"></input>
-          <Line className='percentBar' percent={40} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
+          <Line className='percentBar' percent={reviewCounts[5]} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
         </div>
         <div>
           4 Stars
           <input type="checkbox"></input>
-          <Line className='percentBar' percent={40} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
+          <Line className='percentBar' percent={reviewCounts[4]} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
         </div>
         <div>
           3 Stars
           <input type="checkbox"></input>
-          <Line className='percentBar' percent={40} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
+          <Line className='percentBar' percent={reviewCounts[3]} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
         </div>
         <div>
           2 Stars
           <input type="checkbox"></input>
-          <Line className='percentBar' percent={40} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
+          <Line className='percentBar' percent={reviewCounts[2]} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
         </div>
         <div>
           1 Stars
           <input type="checkbox"></input>
-          <Line className='percentBar' percent={40} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
+          <Line className='percentBar' percent={reviewCounts[1]} strokeWidth={5} strokeColor='blue' trailWidth={5}/>
         </div>
       </div>
     </div>
