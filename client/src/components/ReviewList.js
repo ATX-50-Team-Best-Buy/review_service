@@ -11,6 +11,11 @@ class ReviewList extends React.Component {
   constructor(props) {
     super(props)
 
+    //state holds:
+      //the reviews that will be rendered
+      //the product ID that is currently being viewed
+      //fields used in creating a review
+
     this.state = {
       reviews: [],
       productID: 4,
@@ -26,6 +31,7 @@ class ReviewList extends React.Component {
       reviewAvg: 0,
       reviewCounts: {}
     };
+
 
     this.getReviewsByProductID = this.getReviewsByProductID.bind(this);
     this.getAllReviews = this.getAllReviews.bind(this);
@@ -43,6 +49,9 @@ class ReviewList extends React.Component {
     // this.getAllReviews();
     this.getReviewsByProductID(this.state.productID);
   }
+
+  //gets reviews by the product ID that is currently in state
+  //also, in the second 'then statement, caculates the average rating of reviews by product, and the amount of reviews per star category (e.g. # of 5 star reviews, # of 4 star reviews, etc)
 
   getReviewsByProductID(state){
     axios.get('./reviews', {
@@ -92,20 +101,24 @@ class ReviewList extends React.Component {
     })
   }
 
-  getAllReviews() {
-    axios.get('/reviews')
-    .then(reviews => {
-      this.setState({
-        reviews: reviews.data
-      });
-      // console.log(this.state);
-    })
-    .catch(error => {
-      console.log('Error retrieving reviews: ', error);
-      console.log(error)
-    })
-  }
+  //not currently using this fn - was just using it in the beginning to render some data to the page to work on styling
 
+  // getAllReviews() {
+  //   axios.get('/reviews')
+  //   .then(reviews => {
+  //     this.setState({
+  //       reviews: reviews.data
+  //     });
+  //     // console.log(this.state);
+  //   })
+  //   .catch(error => {
+  //     console.log('Error retrieving reviews: ', error);
+  //     console.log(error)
+  //   })
+  // }
+
+
+  //uses the data entered on the 'ReviewForm' component that is rendered to state, and sends a post request to write a new review into the DB
   writeReview(event) {
     event.preventDefault();
     axios.post('/reviews' , {
@@ -128,25 +141,28 @@ class ReviewList extends React.Component {
     })
   }
 
+  //this is used to add certain review characteristics into state - passed down as a prop & called in the 'ReviewForm' component
   addReviewPart(event) {
     let reviewPart = event.target.className
       this.setState({
         [reviewPart]: event.target.value
       });
   }
+ //this is used to add certain review characteristics into state - passed down as a prop & called in the 'ReviewForm' component
+  //I want to refactor these next 3 functions and combine them, but need to spend some time figuring out how to do so. The problem is that the rating component I'm using only sends back a number (the rating in this case) --need to figure out how to determine which component that number came from in order to combine
 
   addReviewQuality(rating) {
     this.setState({
       reviewQuality: rating
     })
   }
-
+ //this is used to add certain review characteristics into state - passed down as a prop & called in the 'ReviewForm' component
   addReviewValue(rating) {
     this.setState({
       reviewValue: rating
     })
   }
-
+ //this is used to add certain review characteristics into state - passed down as a prop & called in the 'ReviewForm' component
   addReviewEaseOfUse(rating) {
     this.setState({
       reviewEaseOfUse: rating
@@ -158,6 +174,7 @@ class ReviewList extends React.Component {
     })
   }
 
+  //may or may not need this once we combine - this was used in order for me to test out switching up the productID in state to make sure the reviews were changing based on productID
   changeProduct(event) {
     let newProductID = event.target.value;
     this.setState({
@@ -168,6 +185,7 @@ class ReviewList extends React.Component {
     })
   }
 
+  //used to hide the div with the 'ReviewForm component'
   toggleReview(event) {
     event.preventDefault();
     let reviewDiv = document.getElementById('writeReviewForm')
