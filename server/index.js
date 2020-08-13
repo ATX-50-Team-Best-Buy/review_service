@@ -6,10 +6,15 @@ const db = require('../database/index.js');
 const data = require('../phoneData.js');
 const cors = require('cors');
 
-// app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
+console.log('PATH: ', path.join(__dirname, 'build', 'index.html'))
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../public')));
+// app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
+
+// app.get('/*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 app.get('/reviews', (req, res) => {
   req.query.productID = Number.parseInt(req.query.productID);
