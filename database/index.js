@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/bestbuy');
+mongoose.connect('mongodb://ec2-3-19-143-245.us-east-2.compute.amazonaws.com/bestbuy');
 const mock = require('../reviewData.js');
 
 const db = mongoose.connection;
