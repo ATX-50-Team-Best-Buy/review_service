@@ -54,7 +54,7 @@ class ReviewList extends React.Component {
   //also, in the second 'then statement, caculates the average rating of reviews by product, and the amount of reviews per star category (e.g. # of 5 star reviews, # of 4 star reviews, etc)
 
   getReviewsByProductID(state){
-    axios.get('http://localhost:1963/reviews', {
+    axios.get('/reviews', {
       params: {
         productID: state
       }
