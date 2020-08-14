@@ -6,7 +6,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-18-217-189-114.us-east-2.compute.amazonaws.com',
+      host: 'ec2-3-19-143-245.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/FEC-BestBuy-RW.pem',
       ref: 'origin/master',
       repo: 'https://github.com/ATX-50-Team-Best-Buy/review_service.git',
