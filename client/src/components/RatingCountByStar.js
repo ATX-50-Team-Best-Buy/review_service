@@ -4,7 +4,7 @@ import '../styles/ReviewList.css'
 import StarRatings from 'react-star-ratings';
 
 const RatingCountByStar = ({reviewAvg, reviewCounts}) => {
-  console.log(reviewAvg)
+  // console.log(reviewAvg)
   return (
     <div>
     <div className='averageRatings'>
