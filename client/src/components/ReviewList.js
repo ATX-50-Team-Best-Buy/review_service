@@ -138,9 +138,11 @@ class ReviewList extends React.Component {
     .then(confirmation => {
       console.log('Review successfully posted: ', confirmation);
     })
+    .then(() => {
+      this.getReviewsByProductID(this.state.productID);
+    })
     .then( () => {
       this.setState({
-      productID: this.state.productID,
       reviewHeading: '',
       reviewText: '',
       reviewRating: 0,
