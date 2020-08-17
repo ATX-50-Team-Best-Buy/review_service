@@ -131,11 +131,28 @@ class ReviewList extends React.Component {
       reivewQuality: this.state.reviewQuality,
       reviewValue: this.state.reviewValue,
       reviewEaseOfUse: this.state.reviewEaseOfUse,
-      reviewImages: this.state.reviewImages
+      reviewImages: this.state.reviewImages,
+      reviewHelpful: 0,
+      reviewUnhelpful: 0
     })
     .then(confirmation => {
       console.log('Review successfully posted: ', confirmation);
     })
+    .then( () => {
+      this.setState({
+      productID: this.state.productID,
+      reviewHeading: '',
+      reviewText: '',
+      reviewRating: 0,
+      reviewUsername: '',
+      reviewRecommended: false,
+      reivewQuality: 0,
+      reviewValue: 0,
+      reviewEaseOfUse: 0,
+      reviewImages: [],
+      })
+    })
+    .then(() => this.toggleReview())
     .catch(error => {
       console.log('Error posting review: ', error);
     })
