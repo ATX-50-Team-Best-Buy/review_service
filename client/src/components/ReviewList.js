@@ -29,7 +29,8 @@ class ReviewList extends React.Component {
       reviewEaseOfUse: 0,
       reviewImages: [],
       reviewAvg: 0,
-      reviewCounts: {}
+      reviewCounts: {},
+      reviewEmail: ''
     };
 
 
@@ -121,6 +122,7 @@ class ReviewList extends React.Component {
   //uses the data entered on the 'ReviewForm' component that is rendered to state, and sends a post request to write a new review into the DB
   writeReview(event) {
     event.preventDefault();
+    this.toggleReview(event);
     axios.post('/reviews' , {
       productID: this.state.productID,
       reviewHeading: this.state.reviewHeading,
@@ -154,7 +156,6 @@ class ReviewList extends React.Component {
       reviewImages: [],
       })
     })
-    .then(() => this.toggleReview())
     .catch(error => {
       console.log('Error posting review: ', error);
     })
@@ -278,6 +279,14 @@ class ReviewList extends React.Component {
           reviewEaseOfUse = {this.addReviewEaseOfUse}
           reviewRating = {this.addReviewRating}
           writeReview = {this.writeReview}
+          overallRating = {this.state.reviewRating}
+          reviewHeading = {this.state.reviewHeading}
+          reviewText = {this.state.reviewText}
+          reviewQualityDefault = {this.state.reviewQuality}
+          reviewValueDefault = {this.state.reviewValue}
+          reviewEaseOfUseDefault = {this.state.reviewEaseOfUse}
+          reviewUsername = {this.state.reviewUsername}
+          reviewEmail = {this.state.reviewEmail}
         />
     </div>
     )
