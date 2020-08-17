@@ -25,22 +25,22 @@ const ReviewForm = ( {review, addReviewPart, reviewQuality, reviewValue, reviewE
         <div>
         <br></br>
           <h5>Summary</h5>
-          <input type="text" className='reviewHeading' onChange={addReviewPart} defaultValue={reviewHeading}></input>
+          <input type="text" className='reviewHeading' onChange={addReviewPart} value={reviewHeading} ></input>
           <br></br>
           <em style={{fontSize: '13px'}}>Example: Great Camera for beginners!</em>
         </div>
         <div>
           <h5>Your review</h5>
-          <textarea className='reviewText' onChange={addReviewPart} defaultValue={reviewText}></textarea>
+          <textarea className='reviewText' onChange={addReviewPart} value={reviewText} ></textarea>
           <br></br>
           <em style={{fontSize: '13px'}}>Minimum required characters: 50</em>
         </div>
         <br></br>
         <div>
           <h5>Would you recommend this to a friend?</h5>
-          <input className='reviewRecommended' onChange={addReviewPart}type='radio' id='yes' name='recommended' value={true} defaultValue={false} ></input>
+          <input className='reviewRecommended' onChange={addReviewPart}type='radio' id='yes' name='recommended' value={true} defaultChecked={false} ></input>
           <label htmlFor='yes'>Yes</label><br></br>
-          <input className='reviewRecommended' onChange={addReviewPart} type='radio' id='no' name='recommended' value={false} defaultValue={false} ></input>
+          <input className='reviewRecommended' onChange={addReviewPart} type='radio' id='no' name='recommended' value={false} defaultChecked={false} ></input>
           <label htmlFor='no'>No</label><br></br>
         </div>
         <div>
@@ -76,9 +76,9 @@ const ReviewForm = ( {review, addReviewPart, reviewQuality, reviewValue, reviewE
         <div>
           <h5>Tell us a little about yourself.</h5>
           <p style={{fontSize: '15px'}}><strong>Create a nickname</strong></p>
-          <input className='reviewUsername' type='text' onChange={addReviewPart} defaultValue = {reviewUsername} ></input>
+          <input className='reviewUsername' type='text' onChange={addReviewPart} value = {reviewUsername} ></input>
           <p style={{fontSize: '15px'}}><strong>Email address </strong><em>Optional</em></p>
-          <input className='reviewEmail' type='text'onChange={addReviewPart} defaultValue = {reviewEmail} ></input>
+          <input className='reviewEmail' type='text'onChange={addReviewPart} value = {reviewEmail} ></input>
         </div>
         <button onClick={writeReview} className='reviewSubmit'>Submit Review</button>
       </div>
