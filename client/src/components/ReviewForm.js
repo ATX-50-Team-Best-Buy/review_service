@@ -78,7 +78,7 @@ const ReviewForm = ( {review, addReviewPart, reviewQuality, reviewValue, reviewE
           <p style={{fontSize: '15px'}}><strong>Create a nickname</strong></p>
           <input className='reviewUsername' type='text' onChange={addReviewPart} defaultValue = {reviewUsername} ></input>
           <p style={{fontSize: '15px'}}><strong>Email address </strong><em>Optional</em></p>
-          <input className='reviewUsername' type='text'onChange={addReviewPart} defaultValue = {reviewEmail} ></input>
+          <input className='reviewEmail' type='text'onChange={addReviewPart} defaultValue = {reviewEmail} ></input>
         </div>
         <button onClick={writeReview} className='reviewSubmit'>Submit Review</button>
       </div>

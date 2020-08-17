@@ -95,7 +95,7 @@ class ReviewList extends React.Component {
           reviewCounts: counts
         });
       }
-      console.log(this.state)
+      // console.log(this.state)
     })
     .catch(error => {
       console.log('Error retrieving reviews: ', error);
@@ -150,10 +150,11 @@ class ReviewList extends React.Component {
       reviewRating: 0,
       reviewUsername: '',
       reviewRecommended: false,
-      reivewQuality: 0,
+      reviewQuality: 0,
       reviewValue: 0,
       reviewEaseOfUse: 0,
       reviewImages: [],
+      reviewEmail: ''
       })
     })
     .catch(error => {
