@@ -25,6 +25,7 @@ app.get('/reviews', (req, res) => {
     res.status(200).send(reviews);
   })
   .catch(error =>{
+    console.log("ERROR IN SERVER: ", error);
     res.status(500).send('Error retrieving reviews from db: ', error);
   })
 })
