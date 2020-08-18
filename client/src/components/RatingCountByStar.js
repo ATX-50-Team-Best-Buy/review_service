@@ -3,8 +3,17 @@ import {Line} from 'rc-progress';
 import '../styles/ReviewList.css'
 import StarRatings from 'react-star-ratings';
 
-const RatingCountByStar = ({reviewAvg, reviewCounts}) => {
+const RatingCountByStar = ({reviewAvg, reviewCounts, reviews}) => {
   // console.log(reviewAvg)
+  var numRecommended = 0
+  reviews.forEach( review => {
+    if (review.reviewRecommended === true) {
+      numRecommended++;
+    }
+  });
+
+  let percentRecommended = numRecommended / reviews.length * 100 || 0;
+
   return (
     <div>
     <div className='averageRatings'>
@@ -25,9 +34,9 @@ const RatingCountByStar = ({reviewAvg, reviewCounts}) => {
           // svgIconPath="M10.5 5.3L8.4.5 6.3 5.3c-.1.3-.4.4-.6.4H.5l4 4c.1.2.2.5.1.7l-1 5.1L8 13c.2-.2.4-.2.6 0l4.6 2.6-1.2-5.1c0-.2 0-.5.2-.6l4-4H11a.6.6 0 01-.6-.5h0z"
           />
         <br></br>
-        (50 ratings)
+        {`${reviews.length} reviews`}
         <br></br>
-        90% would recommend to friends
+        {`${percentRecommended}% would recommend to friends`}
         </div>
       </div>
       <div className='countByStars'>

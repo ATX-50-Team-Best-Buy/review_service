@@ -226,6 +226,7 @@ class ReviewList extends React.Component {
             <RatingCountByStar
             reviewAvg = {this.state.reviewAvg}
             reviewCounts = {this.state.reviewCounts}
+            reviews = {this.state.reviews}
             />
           </div>
           <div className ='rating pros'>
